@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@700&family=Lexend&display=swap');
+
+.navbar2 {
+    font-family: 'Kodchasan', sans-serif;
+    font-family: 'Lexend', sans-serif;
+    width: 100vw;
+    height: 10vh;
+    background: #343E96;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-con-1 {
+    height: 100%;
+    color: #EEE;
+    padding-left: 50px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    font-family: 'Bruno Ace', cursive;
+font-family: 'Kodchasan', sans-serif;
+display: flex;
+align-items: center;
+    /* background: #000; */
+    width: 50%;
+}
+
+.nav-con-2 {
+    height: 100%;
+    /* background: white; */
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-con-2 ul {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+
+}
+
+.nav-con-2 a {
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.nav-con-2 a.active {
+    color: #000;
+}
+.button-24 {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .button-24:hover,
+  .button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+  }
+  
+  .button-24:active {
+    opacity: .5;
+  }
+
+  .username{
+    color: #FF4742;
+    text-transform: capitalize;
+  }
+
+  
