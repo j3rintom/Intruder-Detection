@@ -7,7 +7,16 @@ const Card = ({ id, name, onUserDeleted }) => {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(`http://localhost:5000/friend/${id}`);
-      if (response.status === 200) {
+      const options = {
+        method: 'POST',
+        body: JSON.stringify({ id:id,name:name }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+      const response2 = await fetch('http://localhost:8080/delete_user', options);
+
+      if (response.status === 200&& response2.status===200) {
         // Call the onUserDeleted function prop
         onUserDeleted();
       }

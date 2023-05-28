@@ -4,6 +4,8 @@
     min-height: 90vh;
     height: max-content;
     padding: 30px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 

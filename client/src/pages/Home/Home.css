@@ -2,4 +2,9 @@
     background: #fafbf4;
     width: 100vw;
     height: 90vh;
+    overflow-x:hidden ;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
