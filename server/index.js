@@ -3,6 +3,7 @@ const cors = require('cors')
 var mongoose = require('mongoose')
 const app = express()
 const friendRoutes = require("./routes/friend.js")
+const armRoutes = require("./routes/arm.js")
 app.use(express.json())
 const corsOptions ={
     origin:'*', 
@@ -11,6 +12,7 @@ const corsOptions ={
  }
 app.use(cors(corsOptions))
 app.use("/friend",friendRoutes)
+app.use("/arm",armRoutes)
 app.get("/",(req,res)=>{s
     res.send("Hello World")
 })

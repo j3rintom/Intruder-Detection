@@ -3,6 +3,7 @@ import {  useNavigate } from 'react-router-dom'
 import {GoogleButton} from "react-google-button"
 import { UserAuth} from '../../context/AuthContext';
 import "./Login.css"
+import axios from "axios"
 import Navbar from '../../component/Navbar/Navbar';
 const Login = () => {
     const navigate = useNavigate()
@@ -19,6 +20,7 @@ const Login = () => {
       },[])
     useEffect(()=>{
         if(user != null){
+            
             navigate('/home')
         }
     },[user,navigate])
