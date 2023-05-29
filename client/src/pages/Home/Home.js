@@ -1,20 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import "./Home.css";
-import axios from "axios";
-import Navbar2 from "../../component/Navbar2/Navbar2";
-import { UserAuth } from '../../context/AuthContext';
+import React, { useEffect, useState } from 'react'
+import "./Home.css"
+import Navbar2 from "../../component/Navbar2/Navbar2"
+import axios from "axios"
+import { UserAuth } from '../../context/AuthContext'
+import LoadingComponent from "../../component/LoadingComponent/LoadingComponent"
+const Home = () => {
+  const [userInitialized,setUserInitialized] = useState(false)
+  const [isArmed,setIsArmed] = useState(null)
+  const [loading,setLoading] = useState(true)
+  const {user} = UserAuth()
+  useEffect(()=>{
+    document.title = "Home"
+    setUserInitialized(true)
+    
+  },[])
+  const startCamera = async ()=>{
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({ isArmed:isArmed }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
 
-const Home = ({isArmed,setIsArmed}) => {
-  const { user } = UserAuth();
-  const [userInitialized, setUserInitialized] = useState(false);
-
-  useEffect(() => {
-    document.title = "Home";
-    setUserInitialized(true);
-  }, []);
+    const response = await fetch('http://localhost:8080/recognize', options)
+    console.log(response);
+    setLoading(false)
+  }
   useEffect(()=>{
     axios.get(`http://localhost:5000/arm/${user.uid}`).then((response)=>{
-      setIsArmed(response.data.armed)
+      setIsArmed(response.data[0].armed)
+      startCamera()
     }).catch((err)=>{
       console.log(err);
     })
@@ -38,7 +54,7 @@ const Home = ({isArmed,setIsArmed}) => {
     <>
       <Navbar2 />
       <div className='home-container'>
-        {/* Your home content */}
+      {loading?<LoadingComponent />:<h1>Your Surveillance Window is opened as a pop-up.</h1>}
       </div>
     </>
   );

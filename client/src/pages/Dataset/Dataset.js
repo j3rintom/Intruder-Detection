@@ -26,7 +26,6 @@ const Dataset = () => {
       console.log(error);
     }
   };
-
   const handleNewUserAdded = () => {
     fetchFriends();
   };

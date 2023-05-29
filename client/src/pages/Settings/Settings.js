@@ -15,7 +15,8 @@ const Settings = () => {
   useEffect(()=>{
     setLoading(true)
     axios.get(`http://localhost:5000/arm/${user.uid}`).then((response)=>{
-      setIsArmed(response.data.armed)
+      setIsArmed(response.data[0].armed)
+      console.log(response.data[0].armed);
       setLoading(false)
     }).catch((err)=>{
       console.log(err);
